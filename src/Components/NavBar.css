@@ -1,0 +1,46 @@
+#NavBar {
+  display: flex;
+  width: 100%;
+  background-color: rgb(141, 141, 238);
+}
+#NavBar div {
+  margin: auto;
+}
+h2 {
+  text-align: center;
+}
+.sort {
+  width: 100%;
+  height: 100%;
+  padding-top: 3vh;
+  text-align: center;
+}
+.search {
+  height: 100%;
+  width: 100%;
+}
+#search_btn {
+  float: left;
+  height: 5vh;
+  width: 5vh;
+}
+#home_btn {
+  height: 10vh;
+  width: fit-content;
+  background-color: rgb(196, 192, 192);
+  border-radius: 10%;
+}
+.acct_settings {
+  text-align: center;
+  height: 9vh;
+  width: 9vh;
+  border-color: black;
+  border-width: 1px;
+  margin-top: 2vh;
+  border-top-left-radius: 20%;
+  border-top-right-radius: 20%;
+  background-color: rgb(196, 192, 192);
+}
+#acct_settings_btn {
+  padding-top: 0.5vh;
+}

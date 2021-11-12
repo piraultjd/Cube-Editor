@@ -1,0 +1,41 @@
+.Login main {
+  justify-content: space-around;
+  text-align: center;
+}
+
+.Login h1 {
+  margin-top: 0;
+  font-size: 6em;
+  color: rgb(92, 92, 221);
+  -webkit-text-stroke: 0.02em black;
+}
+
+.Login input {
+  padding: 1.5vh;
+  margin: 1.5vh;
+}
+
+.Login button {
+  background-color: rgb(92, 92, 221);
+  color: white;
+  font-weight: 100;
+  border-radius: 5%;
+  border-style: solid;
+  border-color: black;
+  border-width: 0.1vh;
+  width: 10vh;
+  height: 5vh;
+}
+
+#createAcct-btn {
+  width: 20vh;
+}
+
+.Login .close-btn {
+  height: 3.5vh;
+  width: 5vh;
+}
+
+.Login button:active {
+  background-color: rgb(7, 48, 161);
+}

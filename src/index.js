@@ -1,18 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import LogIn from "../src/Components/logIn";
-import HomePage from "../src/Components/homePage";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <Switch>
-        <Route path='/' exact component={LogIn} />
-        <Route path='/home' component={HomePage} />
-      </Switch>
-    </Router>
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );

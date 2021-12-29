@@ -3,53 +3,46 @@ import Popup from "./Popup";
 import { useState } from "react";
 import Account from "../assets/account-btn.svg";
 import Home from "../assets/home-btn.svg";
-import Search from "../assets/search-btn.svg";
+
 import "./Popup.css";
 import "../index.css";
+import { Link } from "react-router-dom";
 
-function NavBar() {
+function NavBar(props) {
   const [accountSettings, setAccountSettings] = useState(false);
 
   return (
     <div id='NavBar'>
-      <div class='home'>
-        <img id='home_btn' src={Home} />
+      <div className='home'>
+        <Link to='/home'>
+          <img id='home_btn' src={Home} alt='Home Button' />
+        </Link>
       </div>
-      <div class='middle'>
-        <img id='search_btn' src={Search} />
-        <div class='search'>
-          <input name='search' type='text' />
-          <select>
-            <option selected value='Date Made'>
-              Date Made
-            </option>
-            <option value='Size'>Size</option>
-            <option value='Name'>Name</option>
-          </select>
-        </div>
-      </div>
+      <div className='middle'>{props.children}</div>
       <div>
-        <div class='acct_settings'>
+        <div className='acct_settings'>
           <img
             id='acct_settings_btn'
             onClick={() => setAccountSettings(true)}
             src={Account}
+            alt='Account Settings'
           />
         </div>
         <h2>Username</h2>
       </div>
-      <Popup
-        className='acct-settings'
-        trigger={accountSettings}
-        setTrigger={setAccountSettings}
-      >
-        <div className='btn-container'>
-          <button className='settings-btn'>Add Friend</button>
-          <button className='settings-btn'>Change Password</button>
-          <button className='settings-btn'>Change Username</button>
-          <button className='settings-btn'>Log Out</button>
-        </div>
-      </Popup>
+      {accountSettings && (
+        <Popup
+          className='acct-settings'
+          onClose={() => setAccountSettings(false)}
+        >
+          <div className='btn-container'>
+            <button className='settings-btn'>Add Friend</button>
+            <button className='settings-btn'>Change Password</button>
+            <button className='settings-btn'>Change Username</button>
+            <button className='settings-btn'>Log Out</button>
+          </div>
+        </Popup>
+      )}
     </div>
   );
 }

@@ -12,6 +12,7 @@ import DeletePopup from "./DeletePopup";
 import { Link } from "react-router-dom";
 
 function HomePage({ onCubeSelected }) {
+  Axios.defaults.withCredentials = true;
   const currentDate = new Date();
   const now =
     currentDate.getMonth() +
@@ -48,9 +49,11 @@ function HomePage({ onCubeSelected }) {
       console.log("Cube Submitted Successfully");
     });
     setCreateCube(false);
-    Axios.get("http://localhost:3001/cubes").then((response) => {
-      setCubeList(response.data);
-    });
+    Axios.get("http://localhost:3001/cubes", { withCredentials: true }).then(
+      (response) => {
+        setCubeList(response.data);
+      }
+    );
   };
 
   const deleteCube = (id) => {

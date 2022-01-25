@@ -24,14 +24,23 @@
   justify-content: space-evenly;
 }
 #color {
+  width: 20%;
+}
+.color {
+  width: 13vw;
   display: flex;
   align-items: center;
-  width: 5vw;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.set {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6vw;
 }
 #set {
-  display: flex;
-  align-items: center;
-  width: 6vw;
+  height: 6vh;
 }
 #middle {
   flex-grow: 1;

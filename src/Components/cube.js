@@ -132,7 +132,7 @@ function Cube({ cubeName }) {
   // }, []);
   // console.log(colors);
 
-  console.log(cubeName);
+  console.log(id);
   return (
     <div>
       <NavBar>

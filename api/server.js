@@ -68,7 +68,9 @@ app.get("/cubes", (req, res) => {
 
 app.get("/cards/:id", (req, res) => {
   const cubeId = req.params.id;
-  db.each("SELECT * FROM cards WHERE cube_id = ?", cubeId, (err, result) => {
+  console.log("Getting Cards");
+  console.log(req.params.id);
+  db.all("SELECT * FROM cards WHERE cube_id = ?", cubeId, (err, result) => {
     if (err) {
       console.log(err);
       res.sendStatus(500);

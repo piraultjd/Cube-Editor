@@ -1,70 +1,33 @@
+# Basic Concept and Terminology
+
+This project is primarily designed to build cubes and/or keep track of card collections for Magic: The Gathering. Traditionally a box of Magic card booster packs you would buy at the store would be drafted among players who would then build a deck to play with. Since this way of play only allows for one draft before the booster packs are used up and is limited to the cards contained in the particular set of the booster box, a cube is a system that allows for a customizable and repeatable draft experience using cards from any of the sets printed throughout the game's history that a player might have access to.
+
+# Starting the Redis Client
+
+This project uses Redis for authentication. It will check a username and password associated in the database then create a session ID which allows the user to create/update/delete whole cubes and/or cards within specific cubes.
+
+To start Redis use the command redis-cli in the terminal.
+
+# Starting the Node Server
+
+This Project uses Node.js to build the server which handles API requests to the Magic card database called Scryfall and updates to the database containing information about users and their cubes.
+
+After starting the redis client one can start the server which will run locally on port 3001. To do this change directory into the my-cube/api folder in the terminal. Once in this directory the command node server.js can be used in a new terminal to start the server.
+
+# Starting the Application
+
+After starting the Redis Client and the Node server the command npm start can be ran on a new terminal to launch the application.
+
+# Some Notes
+
+-Creating a new account will not automatically log the user in with those credentials. They must log in after creating an account
+
+-As of now creating a new cube will not automatically add it to the users list of cubes. After creating a cube the page must be refreshed to see to cube on the user's list of cubes.
+
+-When adding cards to a cube the name of the card added must be identical to an existing card within the Scryfall API. Typos will result in a card not being added a cube.
+
+-Some card names to try adding within a cube could be cards like Black Lotus, Time Walk, Dark Ritual, Giant Growth, Etc.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
